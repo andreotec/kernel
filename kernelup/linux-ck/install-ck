@@ -1,0 +1,22 @@
+#!/bin/bash
+cat pacman.conf > /etc/pacman.conf
+echo "Copiando pacman.conf"
+sleep 2s
+dirmngr </dev/null
+pacman-key -r 5EE46C4C && pacman-key --lsign-key 5EE46C4C
+pacman -Syy
+clear
+pacman -S ck-generic
+echo "Escolha opção 2"
+sleep 3s
+clear
+pacman -S ck-generic
+echo "Escolha opção 3"
+sleep 3s
+clear
+echo "Atualizando o grub"
+grub-mkconfig -o /boot/grub/grub.cfg
+sleep 3s
+clear
+echo "Pronto!! Reinicie o sistema para usar o novo kernel."
+sleep 4s
